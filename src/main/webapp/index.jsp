@@ -9,6 +9,9 @@
 <br/>
 <a href="<c:url value="/registration"/>" target="_blank">Registration</a>
 <br/>
+<br/>
+<a href="<c:url value="/login"/>" target="_blank">Login</a>
+<br/>
 
 </body>
 </html>

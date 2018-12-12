@@ -10,14 +10,10 @@ public class User extends BaseEntity {
 
     private String userName;
     private String password;
+    private Set<Role> roles;
 
     @Transient
     private String confirmPassword;
-
-    @ManyToMany
-    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
 
     public User() {
         super();
@@ -49,6 +45,9 @@ public class User extends BaseEntity {
         this.confirmPassword = confirmPassword;
     }
 
+    @ManyToMany
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     public Set<Role> getRoles() {
         return roles;
     }
