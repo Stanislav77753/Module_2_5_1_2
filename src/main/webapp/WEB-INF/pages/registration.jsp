@@ -28,6 +28,14 @@
             </div>
         </spring:bind>
 
+        <spring:bind path="confirmPassword">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="password" path="confirmPassword" class="form-control"
+                            placeholder="Confirm your password"></form:input>
+                <form:errors path="confirmPassword"></form:errors>
+            </div>
+        </spring:bind>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form:form>
 

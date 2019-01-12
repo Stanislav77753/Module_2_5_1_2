@@ -11,8 +11,6 @@ public class User extends BaseEntity {
     private String userName;
     private String password;
     private Set<Role> roles;
-
-    @Transient
     private String confirmPassword;
 
     public User() {
@@ -37,6 +35,7 @@ public class User extends BaseEntity {
         this.password = password;
     }
 
+    @Transient
     public String getConfirmPassword() {
         return confirmPassword;
     }

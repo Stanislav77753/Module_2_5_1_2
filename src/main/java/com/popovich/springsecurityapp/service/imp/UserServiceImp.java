@@ -10,10 +10,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
 public class UserServiceImp implements UserService {
+
 
     @Autowired
     private UserDao userDao;
@@ -37,4 +39,10 @@ public class UserServiceImp implements UserService {
     public User findByUsername(String userName) {
         return userDao.findByUserName(userName);
     }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userDao.findAll();
+    }
+
 }

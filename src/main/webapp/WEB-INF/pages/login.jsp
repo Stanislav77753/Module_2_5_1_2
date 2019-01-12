@@ -1,5 +1,8 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>Login</title>
@@ -7,14 +10,14 @@
 <body>
 
 <div>
-
-    <form method="POST" action="${contextPath}/login" class="form-signin">
+    <form method="POST" action="${contextPath}/login">
         <h2 class="form-heading">Log in</h2>
-        <input name="userName" type="text" class="form-control" placeholder="Username"
+        <input name="userName" type="text" placeholder="Username"
                autofocus="true"/>
-        <input name="password" type="password" class="form-control" placeholder="Password"/>
+        <input name="password" type="password"  placeholder="Password"/>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <button  type="submit">Log In</button>
-        <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
+        <a href="<c:url value="/registration"/>">Create an account</a>
     </form>
 
 </div>
